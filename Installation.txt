@@ -1,0 +1,11 @@
+If you first time cloned this project from github you need to:
+
+1) install laravel:
+composer global require laravel/installer
+
+2) install LAravel dependencies
+composer install
+or
+composer update --no-scripts
+
+3) php artisan serve
