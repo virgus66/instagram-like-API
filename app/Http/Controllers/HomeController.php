@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return redirect('profile/1');
         return view('home');
     }
 }

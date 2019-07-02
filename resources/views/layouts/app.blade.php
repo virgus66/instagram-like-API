@@ -25,7 +25,7 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <div>
-                        <img src="svg/react.svg" style="height:25px;">
+                        <img src="{{ asset('svg/react.svg') }}" style="height:25px;">
                         {{ config('app.name', 'Laravel') }}
                     </div>
                 </a>
