@@ -2,10 +2,30 @@ If you first time cloned this project from github you need to:
 
 1) install laravel:
 composer global require laravel/installer
-
 2) install LAravel dependencies
 composer install
 or
 composer update --no-scripts
-
 3) php artisan serve
+
+
+
+----- ===== NOTES ===== -----
+
+
+// recompile project
+npm run dev
+
+//recompile on flight
+npm run watch
+
+// list or current routes
+php artisan route:list
+
+
+// create pivot table for many-many relation
+php artisan make:migration creates_profile_user_pivot_table -create profile_user
+
+
+// install telescope (add additional commands to php artisan)
+composer require laravel/telescope

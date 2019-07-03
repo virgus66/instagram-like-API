@@ -4,11 +4,12 @@
 <div class="container" style="width: 900px;">
     <div class="row justify-content-center pt-5">
         <div class="col-md-3">
-            <img src="{{ asset('img/images.png') }}" style="height: 150px;">
+            <img src="{{ $user->profile->profileImage() }}" style="height: 150px;">
         </div>
         <div class="col-md-9 pl-5">
             <div class="d-flex justify-content-between align-items-baseline">
-                <h1>{{ $user->user_name }}</h1>
+                <h3>{{ $user->user_name }}</h3>
+                <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
 
                 @can('update', $user->profile)
                     <a href="{{ asset('post/create') }}">Add new post</a>
@@ -20,8 +21,8 @@
             </div>
             <div class="d-flex mt-5">
                 <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> posts</div>
-                <div class="pr-5"><strong>23k</strong> followers</div>
-                <div class="pr-5"><strong>212</strong> following</div>
+                <div class="pr-5"><strong>{{ $user->profile->followers->count() }}</strong> followers</div>
+                <div class="pr-5"><strong>{{ $user->following->count() }}</strong> following</div>
             </div>
             <div class="pt-4">
                 <div class="font-weight-bold"></div>

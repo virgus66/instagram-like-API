@@ -37,13 +37,32 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        // create eloquent event to be called when profile is booted
+        static::created( function($user) {
+            $user->profile()->create([
+                'title' => $user->user_name, // set default for title, other fields will be blank
+            ]);
+        });
+    }
+
     public function profile()
     {
+        // dd( $this->hasOne(Profile::class) );
         return $this->hasOne(Profile::class);
     }
 
     public function posts()
     {
         return $this->hasMany(Post::class)->orderBy('created_at', 'DESC');
+    }
+
+    public function following()
+    {
+        // dd( $this->belongsToMany(Profile::class) );
+        return $this->belongsToMany(Profile::class);
     }
 }
