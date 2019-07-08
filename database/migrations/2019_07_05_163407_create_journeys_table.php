@@ -15,6 +15,10 @@ class CreateJourneysTable extends Migration
     {
         Schema::create('journeys', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('start_point');
+            $table->string('end_point');
+            $table->json('check_points');
             $table->timestamps();
         });
     }

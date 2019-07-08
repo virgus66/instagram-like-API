@@ -65,4 +65,9 @@ class User extends Authenticatable
         // dd( $this->belongsToMany(Profile::class) );
         return $this->belongsToMany(Profile::class);
     }
+
+    public function journeys()
+    {
+        return $this->hasMany(Journey::class);
+    }
 }
