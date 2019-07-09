@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\JourneysController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +28,5 @@ Route::post('/post', 'PostController@store');
 Route::get('/post/{post}', 'PostController@show');
 
 Route::post('/follow/{user}', 'FollowsController@store');
+
+Route::get('/journeys', 'JourneysController@index');
