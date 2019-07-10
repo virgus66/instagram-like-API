@@ -29,3 +29,7 @@ php artisan make:migration creates_profile_user_pivot_table -create profile_user
 
 // install telescope (add additional commands to php artisan)
 composer require laravel/telescope
+
+
+// Policies tutorial
+https://www.youtube.com/watch?v=NrlY-xeqHBg&list=PLpzy7FIRqpGD0kxI48v8QEVVZd744Phi4&index=44

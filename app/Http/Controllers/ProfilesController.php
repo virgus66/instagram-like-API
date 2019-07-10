@@ -17,6 +17,8 @@ class ProfilesController extends Controller
         //     'user' => $u,
         // ]);
 
+        $this->authorize('view', $user->profile);
+
         $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
         return view('profiles.index', compact('user', 'follows') );
     }

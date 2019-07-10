@@ -30,7 +30,10 @@ class ProfilePolicy
      */
     public function view(User $user, Profile $profile)
     {
-        //
+        // return in_array($user->email, [
+        //     'tabalugas@gmail.com',
+        // ]);
+        return true;
     }
 
     /**

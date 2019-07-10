@@ -13,6 +13,8 @@ class FollowsController extends Controller
 
     public function store(User $user)
     {
+
+        // for meny to many relation you can use attach(), detach(), sync(), syncWithoutDetaching() and toggle() methods
         return auth()->user()->following()->toggle($user->profile); 
     }
 }

@@ -7,12 +7,16 @@ use Illuminate\Http\Request;
 
 class JourneysController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function index()
     {
         $user = auth()->user();
 
-        dd($user->following);
+        // dd($user->following);
 
         $journeys = $user->journeys;
         // $journeys = Journey::whereIn('user_id', )
