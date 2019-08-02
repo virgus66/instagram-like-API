@@ -41,7 +41,7 @@ class User extends Authenticatable
     {
         parent::boot();
 
-        // create eloquent event to be called when profile is booted
+        // create eloquent event to be called when user is booted
         static::created( function($user) {
             $user->profile()->create([
                 'title' => $user->user_name, // set default for title, other fields will be blank
