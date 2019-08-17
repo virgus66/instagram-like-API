@@ -15,6 +15,6 @@ class FollowsController extends Controller
     {
 
         // for meny to many relation you can use attach(), detach(), sync(), syncWithoutDetaching() and toggle() methods
-        return auth()->user()->following()->toggle($user->profile); 
+        return auth()->user()->following()->toggle($user->profile);
     }
 }
